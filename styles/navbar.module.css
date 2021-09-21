@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px 0px #ce3539;
+}
+.branding {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}

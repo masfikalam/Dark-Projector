@@ -1,0 +1,43 @@
+.backcover {
+  padding: 200px;
+  background-image: url("/cover.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+.form {
+  margin: auto;
+  max-width: 500px;
+}
+.group {
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid #ce3539;
+}
+.select {
+  border: none;
+  color: white;
+  background: transparent;
+}
+.input {
+  border: none;
+  color: white;
+  padding: 3px 10px;
+  font-size: 18px;
+  background: transparent;
+}
+.input:focus {
+  outline: none;
+}
+.button {
+  width: 45px;
+  height: 40px;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: #ce3539;
+}
+.button:active {
+  transform: scale(0.9);
+}

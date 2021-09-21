@@ -1,0 +1,14 @@
+.boxes {
+  width: 200px;
+  margin: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+.boxes h4 {
+  color: red;
+  word-wrap: break-word;
+  margin: 5px;
+}

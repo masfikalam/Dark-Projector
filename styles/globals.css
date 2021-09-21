@@ -1,16 +1,42 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+/* imports */
+@import url("bootstrap/dist/css/bootstrap.css");
+@import url("https://fonts.googleapis.com/css2?family=Chela+One&family=Volkhov&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+/* default */
 * {
   box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: rgb(0, 3, 12);
+  scroll-behavior: smooth;
+  font-family: "Volkhov", serif;
+}
+a {
+  text-decoration: none;
+}
+.red-color {
+  color: #ce3539;
+}
+.blue-color {
+  color: #2c70a8;
+}
+.chela-font {
+  font-family: "Chela One", cursive;
+}
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  top: 90px;
+  bottom: auto;
+  font-size: 50px;
+  position: absolute;
+  width: 50px !important;
+  color: white !important;
+  background: rgba(0, 0, 0, 0.747);
+}
+.alice-carousel__next-btn {
+  right: 0;
 }

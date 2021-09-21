@@ -1,0 +1,17 @@
+.slide {
+  cursor: pointer;
+}
+.hide {
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+.hover:hover .hide {
+  top: 0;
+  transition: 0.5s ease;
+}

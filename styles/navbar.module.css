@@ -9,3 +9,15 @@
   cursor: pointer;
   align-items: center;
 }
+.credit small {
+  font-size: 12px;
+}
+.credit h4 {
+  margin: -6px 0 0 0;
+}
+
+@media (max-width: 400px) {
+  .credit {
+    transform: scale(0.9);
+  }
+}

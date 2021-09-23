@@ -16,6 +16,18 @@ export default function Navbar() {
           <h1 className="chela-font red-color ms-2 my-0">Dark Projector</h1>
         </div>
       </Link>
+
+      <a
+        target="_blank"
+        className="text-white"
+        rel="no-referrer noreferrer"
+        href="https://masfikul-alam.web.app"
+      >
+        <div className={styles.credit}>
+          <small>Developed by</small>
+          <h4>Masfik</h4>
+        </div>
+      </a>
     </nav>
   );
 }

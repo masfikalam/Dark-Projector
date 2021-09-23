@@ -1,4 +1,5 @@
-.slide {
+.slide,
+.hide {
   cursor: pointer;
 }
 .hide {

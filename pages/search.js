@@ -17,22 +17,24 @@ export default function SearchPage({ searchData }) {
   }
 
   return (
-    <section className="py-5 px-3 px-lg-5">
+    <section className="py-5 px-3 px-md-5">
       <h3>Search results for - {searchData.expression}</h3>
 
-      <div className="row">
+      <div className="d-flex flex-wrap justify-content-center justify-content-xl-start">
         {searchData.results.map((result) => (
-          <div key={result.id} className="col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+          <div key={result.id} className={`m-3 ${styles.hover}`}>
             <Link href={"/" + result.id} passHref>
-              <div className={`${styles.boxes} mx-auto`}>
+              <div className={`${styles.boxes} h-100 mx-auto`}>
                 <Image
+                  width={200}
+                  height={270}
                   src={result.image}
-                  width="200"
-                  height="250"
                   alt={result.title}
                 />
-                <h4>{result.title}</h4>
-                <p>{result.description}</p>
+
+                <div className={styles.hide}>
+                  <h4 className="ms-2 ms-xxl-1">{result.description}</h4>
+                </div>
               </div>
             </Link>
           </div>

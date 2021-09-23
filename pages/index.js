@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Search from "../components/Header";
+import Header from "../components/Header";
 import MovieRow from "../components/MovieRow";
 
 export default function Home({ trending100, coming25 }) {
@@ -11,7 +11,7 @@ export default function Home({ trending100, coming25 }) {
         <link rel="icon" href="/icon.png" />
       </Head>
 
-      <Search />
+      <Header />
       <MovieRow category={trending100} title="Trending Movies" />
       <MovieRow category={coming25} title="Coming Soon" />
     </main>

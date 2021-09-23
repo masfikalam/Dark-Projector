@@ -1,9 +1,9 @@
 .backcover {
   padding: 200px;
-  background-image: url("/cover.jpg");
-  background-repeat: no-repeat;
-  background-position: right;
   background-size: cover;
+  background-position-x: 40%;
+  background-repeat: no-repeat;
+  background-image: url("/cover.jpg");
 }
 .form {
   margin: auto;
@@ -22,8 +22,8 @@
 .input {
   border: none;
   color: white;
-  padding: 3px 10px;
   font-size: 18px;
+  padding: 3px 10px;
   background: transparent;
 }
 .input:focus {

@@ -25,7 +25,7 @@ export default function Navbar() {
       >
         <div className={styles.credit}>
           <small>Developed by</small>
-          <h4>Masfik</h4>
+          <h5>Masfik</h5>
         </div>
       </a>
     </nav>

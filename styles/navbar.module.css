@@ -10,9 +10,10 @@
   align-items: center;
 }
 .credit small {
-  font-size: 12px;
+  color: yellow;
+  font-size: 10px;
 }
-.credit h4 {
+.credit h5 {
   margin: -6px 0 0 0;
 }
 

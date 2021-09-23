@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeadTag from "../components/HeadTag";
 import styles from "../styles/search.module.css";
 
 export async function getServerSideProps(context) {
@@ -17,29 +18,33 @@ export default function SearchPage({ searchData }) {
   }
 
   return (
-    <section className="py-5 px-3 px-md-5">
-      <h3>Search results for - {searchData.expression}</h3>
+    <>
+      <HeadTag title={`Search - ${searchData.expression}`} />
 
-      <div className="d-flex flex-wrap justify-content-center justify-content-xl-start">
-        {searchData.results.map((result) => (
-          <div key={result.id} className={`m-3 ${styles.hover}`}>
-            <Link href={"/" + result.id} passHref>
-              <div className={`${styles.boxes} h-100 mx-auto`}>
-                <Image
-                  width={200}
-                  height={270}
-                  src={result.image}
-                  alt={result.title}
-                />
+      <section className="py-5 px-3 px-md-5">
+        <h3>Search results for - {searchData.expression}</h3>
 
-                <div className={styles.hide}>
-                  <h4 className="ms-2 ms-xxl-1">{result.description}</h4>
+        <div className="d-flex flex-wrap justify-content-center justify-content-xl-start">
+          {searchData.results.map((result) => (
+            <div key={result.id} className={`m-3 ${styles.hover}`}>
+              <Link href={"/" + result.id} passHref>
+                <div className={`${styles.boxes} h-100 mx-auto`}>
+                  <Image
+                    width={200}
+                    height={270}
+                    src={result.image}
+                    alt={result.title}
+                  />
+
+                  <div className={styles.hide}>
+                    <h4 className="ms-2 ms-xxl-1">{result.description}</h4>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </section>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

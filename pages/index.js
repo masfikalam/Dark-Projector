@@ -21,10 +21,10 @@ export default function Home({ trending100, coming25 }) {
 
 export async function getServerSideProps() {
   const trending = await fetch(
-    `https://imdb-api.com/en/API/MostPopularMovies/${process.env.NEXT_PUBLIC_KEY_2}`
+    `https://imdb-api.com/en/API/MostPopularMovies/${process.env.NEXT_PUBLIC_KEY}`
   );
   const coming = await fetch(
-    `https://imdb-api.com/en/API/ComingSoon/${process.env.NEXT_PUBLIC_KEY_2}`
+    `https://imdb-api.com/en/API/ComingSoon/${process.env.NEXT_PUBLIC_KEY}`
   );
 
   const trending100 = await trending.json();

@@ -6,7 +6,7 @@ import styles from "../styles/search.module.css";
 export async function getServerSideProps(context) {
   const { type, term } = context.query;
   const res = await fetch(
-    `https://imdb-api.com/en/API/${type}/${process.env.NEXT_PUBLIC_KEY_2}/${term}`
+    `https://imdb-api.com/en/API/${type}/${process.env.NEXT_PUBLIC_KEY}/${term}`
   );
   const data = await res.json();
   return { props: { searchData: data } };

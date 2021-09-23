@@ -7,7 +7,7 @@ import HeadTag from "../components/HeadTag";
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    `https://imdb-api.com/en/API/Title/${process.env.NEXT_PUBLIC_KEY_2}/${context.params.id}`
+    `https://imdb-api.com/en/API/Title/${process.env.NEXT_PUBLIC_KEY}/${context.params.id}`
   );
   const data = await res.json();
   return { props: { details: data } };
@@ -19,7 +19,7 @@ export default function Details({ details }) {
   // go to trailer youtube link
   const viewTrailer = async () => {
     const res = await fetch(
-      `https://imdb-api.com/en/API/YouTubeTrailer/${process.env.NEXT_PUBLIC_KEY_2}/${details.id}`
+      `https://imdb-api.com/en/API/YouTubeTrailer/${process.env.NEXT_PUBLIC_KEY}/${details.id}`
     );
     const data = await res.json();
     data.videoUrl && router.push(data.videoUrl);

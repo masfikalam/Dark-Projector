@@ -6,6 +6,7 @@ import { SiImdb } from "react-icons/si";
 import styles from "../styles/movies.module.css";
 
 export default function MovieRow({ category, title }) {
+  // items to display
   const responsive = {
     0: { items: 2 },
     460: { items: 3 },
@@ -15,6 +16,7 @@ export default function MovieRow({ category, title }) {
     1200: { items: 8 },
   };
 
+  // each item in the slide
   const items = category.items.map((movie, i) => (
     <div key={movie.id} className={`item ${styles.hover}`} data-value={i + 1}>
       <Image

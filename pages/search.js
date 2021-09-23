@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import ErrorAPI from "../components/ErrorAPI";
 import HeadTag from "../components/HeadTag";
 import styles from "../styles/search.module.css";
 
+// getting results based on search keyword
 export async function getServerSideProps(context) {
   const { type, term } = context.query;
   const res = await fetch(
@@ -13,8 +15,14 @@ export async function getServerSideProps(context) {
 }
 
 export default function SearchPage({ searchData }) {
+  // if maximum API calls reached, say SORRY
   if (searchData.errorMessage) {
-    return <h3>{searchData.errorMessage}</h3>;
+    return (
+      <>
+        <HeadTag title="Sorry ☹️ ☹️ ☹️" />
+        <ErrorAPI />
+      </>
+    );
   }
 
   return (

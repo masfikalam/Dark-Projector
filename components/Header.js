@@ -8,6 +8,7 @@ export default function Header() {
   const [term, setTerm] = useState("");
   const [type, setType] = useState("SearchMovie");
 
+  // search movie with keyword
   const searchMovie = (e) => {
     e.preventDefault();
     router.push(`/search?type=${type}&term=${term}`);

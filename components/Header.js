@@ -33,6 +33,7 @@ export default function Header() {
             <input
               type="text"
               name="title"
+              autoComplete="off"
               className={styles.input}
               placeholder="Type name..."
               onChange={(e) => setTerm(e.target.value)}

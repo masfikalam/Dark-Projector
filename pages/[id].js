@@ -3,8 +3,10 @@ import { useRouter } from "next/router";
 import { FaFilm, FaHatCowboy, FaPencilAlt, FaUserSecret } from "react-icons/fa";
 import { SiImdb } from "react-icons/si";
 import { TiMediaFastForward } from "react-icons/ti";
+import ErrorAPI from "../components/ErrorAPI";
 import HeadTag from "../components/HeadTag";
 
+// getting movie data based on ID
 export async function getServerSideProps(context) {
   const res = await fetch(
     `https://imdb-api.com/en/API/Title/${process.env.NEXT_PUBLIC_KEY}/${context.params.id}`
@@ -15,6 +17,16 @@ export async function getServerSideProps(context) {
 
 export default function Details({ details }) {
   const router = useRouter();
+
+  // if maximum API calls reached, say SORRY
+  if (details.errorMessage) {
+    return (
+      <>
+        <HeadTag title="Sorry ☹️ ☹️ ☹️" />
+        <ErrorAPI />
+      </>
+    );
+  }
 
   // go to trailer youtube link
   const viewTrailer = async () => {
@@ -93,6 +105,7 @@ export default function Details({ details }) {
             <FaUserSecret className="text-warning me-2 mb-1" />
             Top Cast :
           </p>
+
           <div className="row mt-4 ps-4 ps-lg-0">
             {details.actorList?.map((actor) => (
               <div
@@ -106,6 +119,7 @@ export default function Details({ details }) {
                   alt={actor.name}
                   className="rounded-pill"
                 />
+
                 <div className="ms-3 d-flex flex-column justify-content-center">
                   <p className="mb-0">{actor.name}</p>
                   <small className="text-warning">{actor.asCharacter}</small>

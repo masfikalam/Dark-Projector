@@ -1,3 +1,4 @@
+import ErrorAPI from "../components/ErrorAPI";
 import Header from "../components/Header";
 import HeadTag from "../components/HeadTag";
 import MovieRow from "../components/MovieRow";
@@ -8,10 +9,19 @@ export default function Home({ trending100, coming25 }) {
       <HeadTag title="Dark Projector - Movies & Series" />
 
       <Header />
-      <MovieRow category={trending100} title="Trending Movies" />
-      <MovieRow category={coming25} title="Coming Soon" />
 
-      <footer className="text-center py-5">
+      {/* if maximum API calls reached, say SORRY, or show DATA*/}
+      {trending100.errorMessage || coming25.errorMessage ? (
+        <ErrorAPI />
+      ) : (
+        <>
+          <MovieRow category={trending100} title="Trending Movies" />
+          <MovieRow category={coming25} title="Coming Soon" />
+        </>
+      )}
+
+      <footer className="text-center pt-5 pb-3">
+        <hr />
         <p className="mb-1">Dark Projector &copy; 2021</p>
         <p>All rights reserved.</p>
       </footer>
@@ -19,6 +29,7 @@ export default function Home({ trending100, coming25 }) {
   );
 }
 
+// getting trending and upcoming movie data
 export async function getServerSideProps() {
   const trending = await fetch(
     `https://imdb-api.com/en/API/MostPopularMovies/${process.env.NEXT_PUBLIC_KEY}`

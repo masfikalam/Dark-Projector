@@ -24,6 +24,7 @@ export default function SearchPage({ searchData }) {
       </>
     );
   }
+  console.log(searchData);
 
   return (
     <>
@@ -44,9 +45,9 @@ export default function SearchPage({ searchData }) {
                     alt={result.title}
                   />
 
-                  <div className={styles.hide}>
-                    <h4 className="ms-2 ms-xxl-1">{result.description}</h4>
-                  </div>
+                  <h4 className="ms-2 ms-xxl-1">
+                    {result.title} {result.description}
+                  </h4>
                 </div>
               </Link>
             </div>

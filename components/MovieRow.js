@@ -18,18 +18,18 @@ export default function MovieRow({ category, title }) {
 
   // each item in the slide
   const items = category.items.map((movie, i) => (
-    <div key={movie.id} className={`item ${styles.hover}`} data-value={i + 1}>
-      <Image
-        width={200}
-        height={320}
-        src={movie.image}
-        alt={movie.title}
-        className={styles.slide}
-      />
-
+    <div key={movie.id} className="item" data-value={i + 1}>
       <Link href={"/" + movie.id} passHref>
-        <div className={styles.hide}>
-          <h4 className="me-2 me-xxl-3 d-flex align-items-center">
+        <div className={styles.cover}>
+          <Image
+            width={200}
+            height={320}
+            src={movie.image}
+            alt={movie.title}
+            className="rounded"
+          />
+
+          <h4 className={styles.hide}>
             {title === "Coming Soon" ? (
               movie.releaseState
             ) : (

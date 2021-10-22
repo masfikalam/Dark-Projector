@@ -113,11 +113,11 @@ export default function Details({ details }) {
                 className="col-md-6 col-lg-4 col-xl-3 d-flex align-items-center mb-4"
               >
                 <Image
-                  width="70"
+                  width="90"
                   height="90"
                   src={actor.image}
                   alt={actor.name}
-                  className="rounded-pill"
+                  className="rounded"
                 />
 
                 <div className="ms-3 d-flex flex-column justify-content-center">
